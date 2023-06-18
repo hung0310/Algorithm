@@ -1,0 +1,41 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void input(vector<int>& a, int n) {
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+}
+
+int BinarySearch(vector<int>& a, int search) {
+	int low = 0;
+	int high = a.size() - 1;
+	while(low <= high) {
+		int mid = low + (high-low)/2;
+		if(a[mid]==search) {
+			return mid;
+		} else if(a[mid] < search) {
+			low = mid + 1;
+		} else {
+			high = mid - 1;
+		}
+	}
+	return -1;
+}
+
+int main() {
+    int n, search;
+    cout << "Nhap so luong phan tu: ";
+    cin >> n;
+    vector<int> a(n);
+    input(a, n);
+    cout << "Nhap phan tu can tim kiem: ";
+    cin >> search;
+    int index = BinarySearch(a, search);    
+    if(index == -1)
+    	cout<<"Khong tim thay phan tu yeu cau";
+    else 
+        cout<<"\nPhan tu yeu cau duoc tim thay tai vi tri thu: " << index + 1;
+    return 0;
+}
