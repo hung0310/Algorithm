@@ -36,6 +36,6 @@ int main() {
     if(index == -1)
     	cout<<"Khong tim thay phan tu yeu cau";
     else 
-        cout<<"\nPhan tu yeu cau duoc tim thay tai vi tri thu: " << index + 1;
+        cout<<"Phan tu yeu cau duoc tim thay tai vi tri thu: " << index + 1;
     return 0;
 }
